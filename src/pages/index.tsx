@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.scss'
+import LocalTimeWidget from '@/components/widgets/localTime'
+import GitHubWidget from '@/components/widgets/github'
 
 export default function Home() {
   return (
@@ -13,8 +15,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div>
-          <p className="text-3xl font-bold underline">This is Mia's website!</p>
+        <div className={styles.column}>
+            <div className={styles.header}>
+                <h1 className="text-6xl dark:text-white mr-lg">Mia Taylor</h1>
+            </div>
+            <GitHubWidget />
+        </div>
+        <div className={styles.column}>
+            <LocalTimeWidget />
         </div>
       </main>
     </>

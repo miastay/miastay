@@ -1,0 +1,44 @@
+.widget {
+    @apply p-sm;
+    display: flex;
+    border-radius: var(--border-radius);
+    box-shadow: #22000033 0px 0px 20px;
+    width: max-content;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: #22000055 0px 10px 20px;
+    }
+    transition: transform 0.4s ease-in-out, box-shadow 0.5s ease-in-out;
+
+    img {
+        @media (prefers-color-scheme: dark) {
+            filter: brightness(200);
+        }
+    }
+}
+
+.widget > [class*=localtime] {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & > [class*=post] {
+        align-self: normal;
+        justify-self: normal;
+    }
+    user-select: none;
+}
+
+.widget > [class*=github] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+        max-width: 10rem;
+    }
+    user-select: none;
+}
+
